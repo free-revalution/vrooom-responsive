@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Vrooom — Barracuda X10</title>
@@ -18,105 +19,117 @@
 
     /* HERO SECTION */
     .hero {
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    background-image: url('assets/mercedes-vision-avtr.webp');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    overflow: hidden;
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      background-image: url('assets/mercedes-vision-avtr.webp');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
     }
 
     /* Optional dark overlay for unifying text+video contrast */
     .hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1));
-    z-index: 0;
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1));
+      z-index: 0;
     }
 
     /* Logo - slightly rotated, floating */
     .hero-logo {
-    position: absolute;
-    left: 2px;
-    width: 30%;
-    transform: rotate(-8deg);
-    z-index: 0;
+      position: absolute;
+      left: 2px;
+      width: 30%;
+      transform: rotate(-8deg);
+      z-index: 0;
     }
 
     .hero-logo img {
-    width: 100%;
+      width: 100%;
     }
 
     /* Rotated text box */
     .hero-text {
-    position: absolute;
-    bottom: 3%;
-    left: 5%;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 30px;
-    border-left: 6px solid #f6e3b4;
-    border-radius: 10px;
-    backdrop-filter: blur(1px);
-    z-index: 0;
-    
+      position: absolute;
+      bottom: 3%;
+      left: 5%;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-left: 6px solid #f6e3b4;
+      border-radius: 10px;
+      backdrop-filter: blur(1px);
+      z-index: 0;
+
     }
 
     .hero-text h1 {
-    font-size: 3em;
-    color: #a0fcf7;
-    margin-bottom: 10px;
+      font-size: 3em;
+      color: #a0fcf7;
+      margin-bottom: 10px;
     }
 
     .hero-text p {
-    font-size: 1.2em;
-    color: #fff;
+      font-size: 1.2em;
+      color: #fff;
     }
 
     /* Tilted video box */
     .hero-video {
-    position: absolute;
-    top: 180px;
-    right: 0px;
-    width: 40%;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.6);
-    z-index: 0;
-    border-radius: 5px;
-    overflow: hidden;
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      width: 40%;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+      z-index: 0;
+      border-radius: 5px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .hero-video:hover {
+      transform: scale(1.3);
     }
 
     .hero-video video {
-    width: 100%;
-    display: block;
-    border-radius: 2px;
+      width: 100%;
+      display: block;
+      border-radius: 2px;
     }
 
     /* CARD SECTION */
     .card-section {
-      
-      justify-content: center;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
       gap: 20px;
       padding: 50px 10%;
       background-color: #ffffff;
+    }
+
+    .top-card,
+    .card {
+      flex: 1 1 calc(33.33% - 20px);
+      max-width: calc(33.33% - 20px);
     }
 
     .top-card {
       background: rgb(248, 240, 194);
       border: 1px solid #f97705;
       border-radius: 8px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
       padding: 20px;
       width: 280px;
       transition: transform 0.3s ease;
     }
-    
+
     .card {
       background: white;
       border: 1px solid #ddd;
       border-radius: 8px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
       padding: 20px;
       width: 280px;
       transition: transform 0.3s ease;
@@ -126,10 +139,10 @@
       transform: translateY(10px);
       box-shadow: 0 12px 24px rgba(101, 247, 205, 0.1);
     }
-    
+
     .card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
     }
 
     .card h3 {
@@ -147,7 +160,7 @@
       .hero-text {
         position: static;
         margin: 20px auto;
-        background: rgba(0,0,0,0.7);
+        background: rgba(0, 0, 0, 0.7);
         text-align: center;
       }
 
@@ -158,13 +171,14 @@
       }
 
       .card-section {
-        
+
         align-items: center;
         padding: 30px 5%;
       }
     }
   </style>
 </head>
+
 <body>
 
   <!-- HERO SECTION -->
@@ -211,5 +225,25 @@
     </div>
   </section>
 
+  <!-- 添加表单 -->
+  <section class="form-section" style="padding: 50px 10%; background-color: #f9f9f9;">
+    <h2>申请试驾 Mercedes Vision AVTR</h2>
+    <form>
+      <label for="name">姓名:</label>
+      <input type="text" id="name" name="name" required>
+      <label for="email">电子邮件:</label>
+      <input type="email" id="email" name="email" required>
+      <label for="phone">电话:</label>
+      <input type="tel" id="phone" name="phone" required>
+      <button type="submit">提交申请</button>
+    </form>
+  </section>
+
+  <!-- 添加页脚 -->
+  <footer style="text-align: center; padding: 20px; background-color: #222; color: #fff;">
+    <p>&copy; 2023 Vrooom. 保留所有权利。</p>
+  </footer>
+
 </body>
+
 </html>
